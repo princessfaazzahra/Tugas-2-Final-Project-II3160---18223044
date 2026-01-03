@@ -8,8 +8,8 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
-const SUPABASE_URL = 'https://nxamzwahwgakiatujxug.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54YW16d2Fod2dha2lhdHVqeHVnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwMDkwMjcsImV4cCI6MjA4MDU4NTAyN30.9nBRbYXKJmLcWbKcx0iICDNisdQNCg0dFjI_JGVt5pk';
+const SUPABASE_URL = 'https://sakbhdzgsoazaihlzyov.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNha2JoZHpnc29hemFpaGx6eW92Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc0NDc0MjgsImV4cCI6MjA4MzAyMzQyOH0.wzSp12JyGP5AkwRg5gahK61Kso_yRKgagxcF2nIr1QI';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
