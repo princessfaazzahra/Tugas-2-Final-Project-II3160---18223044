@@ -1,0 +1,16 @@
+{
+  "name": "catalog-service",
+  "version": "1.0.0",
+  "description": "Microservice for Platoo catalog management",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "author": "",
+  "license": "ISC"
+}
