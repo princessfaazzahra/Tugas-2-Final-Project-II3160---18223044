@@ -5,6 +5,6 @@ services:
     container_name: platoo_catalog_service
     restart: always
     ports:
-      - "3000:3000"
+      - "3012:3012"
     environment:
       - NODE_ENV=production

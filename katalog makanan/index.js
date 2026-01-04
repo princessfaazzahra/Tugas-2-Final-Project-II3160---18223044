@@ -4,7 +4,7 @@ const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config();
 
 const app = express();
-const port = 3000; 
+const port = 3012; 
 
 app.use(express.json());
 app.use(cors());
@@ -14,8 +14,26 @@ const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Platoo Catalog Microservice is running!' });
+app.get('/', async (req, res) => {
+    console.log('Menerima request untuk mengambil semua data dari tabel catalog.');
+    try {
+        // Mengambil semua data ('*') dari tabel 'catalog'
+        const { data, error } = await supabase
+            .from('catalog')
+            .select('*');
+
+        if (error) {
+            // Jika ada error dari Supabase, lempar error tersebut
+            throw error;
+        }
+
+        // Jika berhasil, kirim data sebagai respons JSON
+        res.status(200).json(data);
+
+    } catch (error) {
+        console.error('Error saat mengambil data catalog:', error.message);
+        res.status(500).json({ message: 'Terjadi kesalahan pada server.', error: error.message });
+    }
 });
 
 app.post('/makanan/:id/status', async (req, res) => {
